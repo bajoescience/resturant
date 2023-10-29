@@ -1,0 +1,88 @@
+{
+  "menus": [
+    {
+      "foods": [
+        {
+          "name": "foo",
+          "price": 20,
+          "id": 1
+        },
+        {
+          "name": "bar",
+          "price": 30,
+          "id": 2
+        },
+        {
+          "name": "baz",
+          "price": 15,
+          "id": 3
+        }
+      ],
+      "drinks": [
+        {
+          "name": "foa",
+          "price": 20,
+          "id": 1
+        },
+        {
+          "name": "baa",
+          "price": 30,
+          "id": 2
+        },
+        {
+          "name": "ban",
+          "price": 15,
+          "id": 3
+        }
+      ],
+      "bbq": [
+        {
+          "name": "aaa",
+          "price": 20,
+          "id": 1
+        },
+        {
+          "name": "bbb",
+          "price": 30,
+          "id": 2
+        },
+        {
+          "name": "ccc",
+          "price": 15,
+          "id": 3
+        }
+      ]
+    }
+  ],
+  "reservations": [
+    {
+      "date": "2023-10-29",
+      "reservation": "",
+      "time": "11:01",
+      "persons": "7",
+      "creatorId": 1,
+      "id": 1
+    },
+    {
+      "date": "2023-10-29",
+      "reservation": "",
+      "time": "12:28",
+      "persons": "4",
+      "creatorId": 1,
+      "id": 2
+    }
+  ],
+  "takeaways": [],
+  "transactions": [],
+  "users": [
+    {
+      "username": "abc",
+      "lastName": "Oyinkan",
+      "firstName": "Joseph",
+      "email": "afiliateejoseph@gmail.com",
+      "address": "62A/77 O'Reilly Mountain",
+      "phoneNumber": "08101468379",
+      "id": 1
+    }
+  ]
+}
