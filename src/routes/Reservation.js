@@ -64,7 +64,7 @@ const Reservation = () => {
 
        await reservationService.create(reservationObj)
 
-       navigate('/users/' + user.id)
+       navigate('/resturant/users/' + user.id)
     }
     return (
         <>

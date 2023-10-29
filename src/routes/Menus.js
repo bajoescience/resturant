@@ -18,7 +18,7 @@ const Menus = () => {
 
     const handleClick = (e) => {
       const urlString = e.target.value
-      navigate('/menu/' + urlString)
+      navigate('/resturant/menu/' + urlString)
     }
 
     return (

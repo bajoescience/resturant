@@ -43,7 +43,7 @@ const EditReservation = () => {
     
     // Update the new Reservation to database
     await reservationService.update(id, newReservationObj)
-    navigate('/users/' + creatorId)
+    navigate('/resturant/users/' + creatorId)
   }
     return (
         <>

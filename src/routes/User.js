@@ -23,7 +23,7 @@ const User = () => {
 
     const modifyReservationOf = (id) => {
       // TODO
-      navigate('/reservation/' + id + '/edit')
+      navigate('/resturant/reservation/' + id + '/edit')
   }
 
   const NoReservation = () => {

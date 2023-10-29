@@ -15,7 +15,7 @@ const NavBar = ({user}) => {
                 <li><Link to={'menu'}>Menus</Link></li>
                 <li><Link to={'location'}>Hours and Locations</Link></li>
                 <li><Link to={'about'}>About Us</Link></li>
-                {user && <li><Link to={'/users/' + user.id}>Your Reservations</Link></li>}
+                {user && <li><Link to={'/resturant/users/' + user.id}>Your Reservations</Link></li>}
                 <li><Link to={'reservation'}>Reserve</Link></li>
               </span>
             </ul>

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 const MenuButton = () => {
     const navigate = useNavigate()
     const onClick = () => {
-        navigate('/menu')
+        navigate('/resturant/menu')
     }
     return (
         <>
