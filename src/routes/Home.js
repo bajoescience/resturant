@@ -1,19 +1,20 @@
+import { Box, Stack } from "@mui/material"
 import HomeScreen from "../components/HomeScreen"
 import PromoContainer from "../components/PromoContainer"
 
 // Handles the homepage route
-const Home = () => {
+const Home = ({homeImage, list}) => {
     return (
-      <>
-        <div>
+      <Box>
+        <Stack>
           <div>
-            <HomeScreen />
+            <HomeScreen homeImage={homeImage} />
           </div>
           <div>
-            <PromoContainer />
+            <PromoContainer list={list} />
           </div>
-        </div>
-      </>
+        </Stack>
+      </Box>
     )
   }
 

@@ -3,52 +3,62 @@
     {
       "foods": [
         {
-          "name": "foo",
-          "price": 20,
+          "name": "KERELA PRAWNS CURRY",
+          "ingredients": "Raw Mango Sauce, Kerala Spices",
           "id": 1
         },
         {
-          "name": "bar",
-          "price": 30,
+          "name": "PHADI CHICKEN CURRY",
+          "ingredients": "Fresh Pureed Spinach, Onion Cream",
           "id": 2
         },
         {
-          "name": "baz",
-          "price": 15,
+          "name": "RAJMA MAKHANI",
+          "ingredients": "Red Kidney Beans, Simmered in Onion-Tomato Sauce and Herbs",
           "id": 3
+        },
+        {
+          "name": "PANEER LABABDAR",
+          "ingredients": "Homemade Cottage Cheese, Rich Tomato Sauce, Dried Fenugreek",
+          "id": 4
+        },
+        {
+          "name": "ALOO GOBI MUTTER",
+          "ingredients": "Sauteed Cauliflower, Potato, Fresh Green Peas, Roasted Cumin",
+          "id": 5
         }
       ],
       "drinks": [
         {
-          "name": "foa",
-          "price": 20,
+          "name": "ROSE NEGRONI",
+          "ingredients": "Empress Elderflower Rose Gin, Luxardo Bitters, Dry Vermouth, Orange Twist",
           "id": 1
         },
         {
           "name": "baa",
-          "price": 30,
+          "ingredients": 30,
           "id": 2
         },
         {
           "name": "ban",
-          "price": 15,
+          "ingredients": 15,
           "id": 3
         }
       ],
       "bbq": [
         {
           "name": "aaa",
-          "price": 20,
+          "ingredients": 20,
           "id": 1
         },
         {
           "name": "bbb",
-          "price": 30,
+          "ingredients": 30,
           "id": 2
         },
         {
           "name": "ccc",
-          "price": 15,
+          "ingredients": 15,
           "id": 3
         }
       ]
@@ -56,64 +66,24 @@
   ],
   "reservations": [
     {
-      "date": "2023-10-29",
+      "date": "2023-12-01",
       "reservation": "",
-      "time": "12:28",
-      "persons": "4",
-      "creatorId": 1,
-      "id": 2
-    },
-    {
-      "date": "2023-10-29",
-      "reservation": "",
-      "time": "14:15",
+      "time": "11:19",
       "persons": "3",
       "creatorId": 1,
-      "id": 3
-    },
-    {
-      "date": "2023-10-29",
-      "reservation": "",
-      "time": "14:18",
-      "persons": "3",
-      "creatorId": 1,
-      "id": 4
-    },
-    {
-      "date": "2023-10-11",
-      "reservation": "",
-      "time": "19:19",
-      "persons": "5",
-      "creatorId": 1,
-      "id": 9
-    },
-    {
-      "date": "2023-10-04",
-      "reservation": "",
-      "time": "18:20",
-      "persons": "9",
-      "creatorId": 1,
-      "id": 10
-    },
-    {
-      "date": "2023-10-25",
-      "reservation": "",
-      "time": "19:21",
-      "persons": "5",
-      "creatorId": 1,
-      "id": 11
+      "id": 1
     }
   ],
   "takeaways": [],
   "transactions": [],
   "users": [
     {
-      "username": "abc",
+      "username": "Josephjoe",
       "lastName": "Oyinkan",
       "firstName": "Joseph",
       "email": "afiliateejoseph@gmail.com",
       "address": "62A/77 O'Reilly Mountain",
-      "phoneNumber": "08101468379",
+      "phoneNumber": "",
       "id": 1
     }
   ]

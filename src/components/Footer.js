@@ -1,8 +1,10 @@
+import MuiFooter from "../muicomponents/MuiFooter"
+
 // This is the footer
-const Footer = () => {
+const Footer = ({locations}) => {
     return (
         <>
-          <p>This is the footer of this website</p>
+          <MuiFooter locations={locations} />
         </>
     )
 }

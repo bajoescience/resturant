@@ -1,14 +1,15 @@
-import MenuButton from "../components/MenuButton"
+import { Box, Typography } from "@mui/material"
+import MuiLocations from "../muicomponents/MuiLocations"
 
-const LocationAndTime = () => {
+const LocationAndTime = ({locations}) => {
   
     return (
-        <>
-          <h2>This is the locations and time page</h2>
-          <div>
-            <MenuButton />
-          </div>
-        </>
+        <Box flexGrow={1}>
+          <Typography variant="h4" component={'div'} p={2} fontWeight={'bold'}>
+            Hours and Locations
+          </Typography>
+          <MuiLocations locations={locations} />
+        </Box>
     )
 }
 

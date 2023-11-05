@@ -1,5 +1,5 @@
-import { Outlet } from "react-router-dom"
-import reservationService from "../services/reservations";
+import { AddBox } from "@mui/icons-material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 
 
 const Reservation = ({reservation, cancelReservation, modifyReservation}) => {
@@ -10,15 +10,17 @@ const Reservation = ({reservation, cancelReservation, modifyReservation}) => {
 
     return (
         <>
-            <div>
-                <div>
-                    This reservation is for {persons} persons at {time} on {date} created by you
-                </div>
-                <div>
-                    <button onClick={cancelReservation}>Cancel</button>
-                    <button onClick={modifyReservation}>Modify</button>
-                </div>                
-            </div>
+            <Stack p={1} spacing={1}>
+                <Box>
+                    <Typography variant="body2">
+                        This reservation is for {persons} persons at {time} on {date} created by you
+                    </Typography>
+                </Box>
+                <Box>
+                    <Button onClick={cancelReservation} color="inherit">Cancel</Button>
+                    <Button onClick={modifyReservation} color="inherit">Modify</Button>
+                </Box>                
+            </Stack>
         </>
     )
 }

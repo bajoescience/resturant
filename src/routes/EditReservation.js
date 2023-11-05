@@ -1,6 +1,7 @@
 import { Form, useLoaderData, useNavigate } from "react-router-dom";
 import ReservationForm from "../components/ReservationForm"
 import reservationService from "../services/reservations";
+import { Box, Button } from "@mui/material";
 
 const EditReservation = () => {
   const navigate = useNavigate()
@@ -47,14 +48,14 @@ const EditReservation = () => {
   }
     return (
         <>
-          <div>
+          <Box pb={5} pt={10} pl={30} pr={30}>
             <Form onSubmit={handleSubmit}>
-              <ReservationForm defaults={defaults} />
-              <div>
-                <button>Change</button>
-              </div>
+              <Box m={4} mt={2}>
+                <ReservationForm defaults={defaults} />
+              </Box>
+              <Button color='secondary' type='submit'>Change</Button>
             </Form>
-          </div>
+          </Box>
         </>
     )
 }

@@ -3,6 +3,7 @@ import Reservation from "../components/Reservation"
 import ReserveButton from "../components/ReserveButton"
 import reservationService from "../services/reservations"
 import { useState } from "react"
+import { Box, Stack, Typography } from "@mui/material"
 
 const User = () => {
   const navigate = useNavigate()
@@ -28,30 +29,37 @@ const User = () => {
 
   const NoReservation = () => {
     return (
-      <div>
-        <p>You do not have any reservations currently</p>
-      </div>
+      <Box p={4}>
+        <Typography>You Do Not Have Any Reservations Currently</Typography>
+      </Box>
     )
   }
 
     return (
-        <>
-          <h2>This is {user.firstName}'s page</h2>
+        <Box p={2}>
+          <Typography variant="h4" component={'div'} p={2} fontWeight={'bold'}>
+            Hi {user.firstName}
+          </Typography>
+          <Typography variant="subtitle1" component={'div'} p={2} fontWeight={'bold'}>
+            Your Reservations
+          </Typography>
           {/**Render all reservations belonging to the user */}
-          <div>
-            {reservations.length === 0 ? <NoReservation /> :reservations.map(reservation => <Reservation 
+          <Stack spacing={4}>
+            {reservations.length === 0 
+            ? <NoReservation /> 
+            :reservations.map(reservation => <Reservation 
               key={reservation.id}
               cancelReservation={() => {cancelReservationOf(reservation.id)}}
               modifyReservation={() => {modifyReservationOf(reservation.id)} }
               reservation={reservation}/>
             )}
-          </div>
+          </Stack>
           <div>
-            <div>
+            <Box p={1}>
               <ReserveButton text={'Make a new Reservation'}/>
-            </div>
+            </Box>
           </div>
-        </>
+        </Box>
     )
 }
 

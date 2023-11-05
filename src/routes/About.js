@@ -1,21 +1,14 @@
-import {useNavigate, useOutletContext } from "react-router-dom"
-import ReserveButton from "../components/ReserveButton"
-import MenuButton from "../components/MenuButton"
+import { Box, Typography } from "@mui/material"
+import MuiAbout from "../muicomponents/MuiAbout"
 
-const About = () => {
-    const context = useOutletContext()
-    const navigate = useNavigate()
+const About = ({about}) => {
     return (
-        <>
-          <h2>
-            This is the about us page
-          </h2>
-          <div>
-            <div>
-              <MenuButton />
-            </div>
-          </div>
-        </>
+        <Box textAlign={'center'}>
+          <Typography variant="h4" component={'div'} p={2} fontWeight={'bold'}>
+            Our Story
+          </Typography>
+          <MuiAbout about={about} />
+        </Box>
     )
 }
 

@@ -2,11 +2,24 @@ import { Outlet } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
+import { Box, createTheme, Stack, ThemeProvider } from "@mui/material";
 
 // This function acts as a container for the app
 // Such that functions can be created here and be passed
 // To the rest of the app to keep things neat and tidy
-const App = () => {
+const App = ({locations}) => {
+
+  // Set theme to whatever we like
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#dddddd'
+      },
+      secondary: {
+        main: '#666666'
+      }
+    }
+  })
 
   // In order to create a micro frontend
   // Every route will handle it's own state
@@ -33,18 +46,23 @@ const App = () => {
   }
 
   return (
-    <>
-      {/** Every route has the same Navbar, so Navbar comes here */}
-      <div>
+    <ThemeProvider theme={theme}>
+      <Stack
+      bgcolor={'primary.main'} 
+      color={'secondary.main'}
+      position={'relative'}
+      minHeight={'100vh'}
+      >
+        {/** Every route has the same Navbar, so Navbar comes here */}
         <NavBar user={user} />
-      </div>
-      <div>
-        <Outlet context={context}/>
-      </div>
-      <div>
-        <Footer />
-      </div>
-    </>
+        <Box textAlign={'center'} pb={15}>
+          <Outlet context={context}/>
+        </Box>
+        <Box position={'absolute'} bottom={0} mb={-0.7} width={'100%'}>
+          <Footer locations={locations} />
+        </Box>
+      </Stack>
+    </ThemeProvider>
   )
   
 }

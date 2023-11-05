@@ -1,22 +1,13 @@
-import { useNavigate } from "react-router-dom"
-import MenuButton from "./MenuButton"
+import MuiGrid from "../muicomponents/MuiGrid"
+import { Box } from "@mui/material"
 
 // Handle the promotional container for the homepage
-const PromoContainer = () => {
-  const navigate = useNavigate()
-
-  const handleClick = (e) => {
-    navigate('menu')
-  }
+const PromoContainer = ({list}) => {
     return (
-        <>
-          <div>
-            <p>This contains the promotional details of the resturant</p>
-          </div>
-          <div>
-            <MenuButton />
-          </div>
-        </>
+        <Box>
+          {/**Six Grid Items go here */}
+          <MuiGrid list={list} />
+        </Box>
     )
 }
 

@@ -1,9 +1,9 @@
-import { Form, useNavigate, useOutletContext } from "react-router-dom"
-import UserForm from "../components/UserForm";
+import { useNavigate, useOutletContext } from "react-router-dom"
 import MenuButton from "../components/MenuButton";
-import ReservationForm from "../components/ReservationForm";
 import userService from "../services/users";
 import reservationService from "../services/reservations";
+import { Stack } from "@mui/material";
+import MuiForm from "../muicomponents/MuiForm";
 
 const Reservation = () => {
     const navigate = useNavigate()
@@ -44,10 +44,7 @@ const Reservation = () => {
       const data = new FormData(e.currentTarget)
 
       // Handle how to create reservation without user
-      if (!user) {
-        const newUser = await handleUsersubmit(data)
-        if (!newUser) return
-      }
+      const creator = user || await handleUsersubmit(data)
 
       const date = data.get('date')
       const time = data.get('time')
@@ -60,34 +57,18 @@ const Reservation = () => {
         return
        }
 
-       const reservationObj = { date, reservation, time, persons, creatorId: user.id}
+       console.log(user, creator);
+       const reservationObj = { date, reservation, time, persons, creatorId: creator.id}
 
        await reservationService.create(reservationObj)
 
-       navigate('/resturant/users/' + user.id)
+       navigate('/resturant/users/' + creator.id)
     }
     return (
-        <>
-          <h3>This is the Reservation page</h3>
-          <div>
-              <MenuButton />
-          </div>
-          <div>
-            <Form  onSubmit={handleSubmit} >
-              <div>
-                {
-                  user 
-                  ? <h4>Hello {user.firstName}</h4>
-                  :  <UserForm />
-                }
-              </div>
-              <div>
-                <ReservationForm />
-              </div>
-              <button>Reserve</button>
-            </Form>
-          </div>
-        </>
+        <Stack textAlign={'center'} spacing={2} p={4}>
+          <MuiForm user={user} handleSubmit={handleSubmit}/>
+          <MenuButton />
+        </Stack>
     )
 }
 

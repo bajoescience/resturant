@@ -1,25 +1,36 @@
 import { Link } from "react-router-dom"
+import MuiNavbar from "../muicomponents/MuiNavbar"
+import { useNavigate } from "react-router-dom"
 
 // The navbar position is always fixed no matter how we scroll
 const NavBar = ({user}) => {
+    const navigate = useNavigate()
+
+    // Handle all navigation links routing
+    const handleClicks = {
+      home: () => {
+        navigate('/resturant')
+      },
+      menu: () => {
+        navigate('/resturant/menu')
+      },
+      location: () => {
+        navigate('/resturant/location')
+      },
+      about: () => {
+        navigate('/resturant/about');
+      },
+      users: () => {
+        navigate('/resturant/users/' + user?.id);
+      },
+      reserve: () => {
+        navigate('/resturant/reservation');
+      }
+    }
+ 
     return (
         <>
-          <div>
-            <ul>
-              <span>
-                <li id="homeRoute">
-                  <Link to={''}><h2> Joe Resturant</h2></Link>
-                </li>
-              </span>
-              <span>
-                <li><Link to={'menu'}>Menus</Link></li>
-                <li><Link to={'location'}>Hours and Locations</Link></li>
-                <li><Link to={'about'}>About Us</Link></li>
-                {user && <li><Link to={'/resturant/users/' + user.id}>Your Reservations</Link></li>}
-                <li><Link to={'reservation'}>Reserve</Link></li>
-              </span>
-            </ul>
-          </div>
+          <MuiNavbar handleClicks={handleClicks} user={user}/>
         </>
     )
 }

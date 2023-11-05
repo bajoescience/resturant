@@ -1,5 +1,7 @@
 import { useMatch, useOutletContext } from "react-router-dom"
 import Menu from "../components/Menu"
+import { useEffect } from "react"
+import MuiCardWrapper from "../muicomponents/MuiCardWrapper"
 
 const MenuCategories = () => {
     const context = useOutletContext()
@@ -29,6 +31,11 @@ const MenuCategories = () => {
       // Get the menu category from match urlpathname
       const match = checkMenuUrl()
 
+      // Set the match string as the menu tab selected value
+      useEffect(() => {
+        context.app.setSelectedValue(match.pathname.substring(16) || '')
+      }, [])
+
       // Pathname check the path of the menu url
       // If it is null, we know that it is the default page foods
       const pathname = match.pathname.substring(16) || 'foods'
@@ -37,7 +44,7 @@ const MenuCategories = () => {
     return (
         <>
           <div>
-            {menu?.map(m => <Menu key={m.id} menu={m}/>)}
+            <MuiCardWrapper menu={menu}/>
           </div>
         </>
     )
