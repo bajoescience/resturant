@@ -8,7 +8,7 @@ const UserForm = () => {
 
     return (
         <Stack spacing={4} >
-          <Stack direction={'row'} spacing={12}>
+          <Stack direction={'row'} spacing={{xs: 4, sm: 12}}>
             <TextField 
               label='First Name' 
               name="firstname" 
@@ -42,7 +42,7 @@ const UserForm = () => {
               }}
             />
           </Stack>
-          <Stack direction={'row'} spacing={12}>
+          <Stack direction={'row'} spacing={{xs: 4, sm: 12}}>
             <TextField 
               label='Username' 
               name="username" 
@@ -76,7 +76,7 @@ const UserForm = () => {
               }}
            />
           </Stack>
-          <Stack direction={'row'} spacing={12}>
+          <Stack direction={'row'} spacing={{xs: 4, sm: 12}}>
             <TextField 
               label='Address' 
               name="address" 

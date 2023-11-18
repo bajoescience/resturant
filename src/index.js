@@ -20,6 +20,8 @@ import ErrorElement from './routes/Error';
 
 import loaders from './helper/loaders';
 import actions from './helper/actions';
+
+
 import homeImg from './images/one.jpg'
 import twoImg from './images/two.jpg'
 import threeImg from './images/three.jpg'

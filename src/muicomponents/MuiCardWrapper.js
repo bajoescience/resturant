@@ -8,18 +8,18 @@ const MuiCardWrapper = ({menu}) => {
     bgcolor={'secondary.main'} 
     color={'primary.main'} 
     p={5} 
-    pr={20}
-    pl={20}
+    pr={{xs: 5, sm: 10, md: 20}}
+    pl={{xs: 5, sm: 10, md: 20}}
     textAlign={'center'}>
         <Paper
         elevation={8}
         sx={{
             backgroundColor: 'primary.main', 
             color: 'secondary.main',
-            pt: 5,
-            pb: 5,
-            pr: 1,
-            pl: 1
+            pt: {xs: 5},
+            pb: {xs: 5},
+            pr: {xs: 1},
+            pl: {xs: 1}
         }}>
             {menu?.map(m => <Menu key={m.id} menu={m}/>)}
             <ReserveButton />

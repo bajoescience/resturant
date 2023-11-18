@@ -8,6 +8,13 @@ import { Box, createTheme, Stack, ThemeProvider } from "@mui/material";
 // Such that functions can be created here and be passed
 // To the rest of the app to keep things neat and tidy
 const App = ({locations}) => {
+  // Store the app's viewport width in react state
+  const [viewportWidth, setViewportWidth] = useState()
+
+  // Set initial value of viewport-Width to viewport
+  useEffect(() => {
+    setViewportWidth(window.visualViewport.width)
+  }, [])
 
   // Set theme to whatever we like
   const theme = createTheme({
@@ -42,7 +49,8 @@ const App = ({locations}) => {
       data: 'This are details from the App component',
     },
     user,
-    setUser
+    setUser,
+    viewportWidth
   }
 
   return (
@@ -54,7 +62,7 @@ const App = ({locations}) => {
       minHeight={'100vh'}
       >
         {/** Every route has the same Navbar, so Navbar comes here */}
-        <NavBar user={user} />
+        <NavBar user={user} viewportWidth={viewportWidth} />
         <Box textAlign={'center'} pb={15}>
           <Outlet context={context}/>
         </Box>

@@ -10,7 +10,7 @@ const ReservationForm = ({defaults}) => {
     
     return (
         <Stack spacing={4}>
-              <Stack direction={'row'} spacing={12}>
+          <Stack direction={'row'} spacing={{xs: 8, sm: 12, lg: 16}}>
             <TextField 
               label='Party Size' 
               name="persons" 
@@ -46,7 +46,7 @@ const ReservationForm = ({defaults}) => {
               }}
             />
           </Stack>
-          <Stack direction={'row'} spacing={12}>
+          <Stack direction={'row'} spacing={{xs: 8, sm: 12, lg: 16}}>
             <TextField 
               name="date" 
               type="date" 
@@ -73,6 +73,7 @@ const ReservationForm = ({defaults}) => {
               defaultValue={reservation}
               label='Extra Details...' 
               fullWidth
+              multiline
             />
         </Stack>
     )

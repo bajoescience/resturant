@@ -1,5 +1,7 @@
 import axios from "axios"
-const baseUrl = 'http://localhost:3001/transactions'
+const test = true
+const baseUrl = 'https://restutant-api.onrender.com/transactions'
+const baseUrl1 = 'http://localhost:3001/transactions'
 
 // Get users from database
 const getAll = async () => {

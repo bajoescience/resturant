@@ -1,10 +1,10 @@
 import React from 'react'
-import { Grid, Box, Typography, Stack } from '@mui/material'
+import { Grid, Box, Typography} from '@mui/material'
 import MenuButton from '../components/MenuButton'
 
 const DisplayText = ({item}) => {
   return (
-    <Box p={10}>
+    <Box p={{xs: 2, sm: 5, md: 10}}>
       <Typography 
           variant='h4'  
           component={'div'}
@@ -24,8 +24,8 @@ const DisplayImage = ({item}) => {
         <Box
           component={'img'}
           src={item.src}
-          height={'98vh'} 
-          width={'48.6vw'} 
+          height={{xs: '80vh', md: '95vh'}} 
+          width={{xs: '90vw',md: '48.6vw'}} 
           alt={item.alt}
         />
       </>
@@ -39,19 +39,40 @@ const DisplayImage = ({item}) => {
   )
 }
 
-export const MuiHomeGridBox = ({item, index}) => {
+export const MuiHomeGridBox = ({item, index, outlet}) => {
+  const {viewportWidth} = outlet
+
   const id = index + 1
-  const stackDirection = id%2 !== 0 ? 'row' :'row-reverse'
+
+  // For the mobile version, the grid should not alternate 
+  // Between row and row-reverse meaning the stack direction variable
+  // is alaways true for mobile devices, else alternate row directions
+  // on each row.
+  const stackDirection = viewportWidth < 900 ? true: id%2 !== 0
   return (
     <>
-      <Stack direction={stackDirection}>
-      <Grid item xs={12} sm={6} >
-        <DisplayText item={item} />
-      </Grid>
-      <Grid item xs={12} sm={6}>
-        <DisplayImage item={item} />
-      </Grid>
-      </Stack>
+      {/**Render differnet arrangement for smaller devices */}
+      {stackDirection 
+      ? (
+        <>
+          <Grid item xs={12} md={6} >
+            <DisplayText item={item} />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <DisplayImage item={item} />
+          </Grid>
+        </>
+      ) : (
+        <>
+          <Grid item xs={12} md={6} >
+            <DisplayImage item={item} />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <DisplayText item={item} />
+          </Grid>
+        </>
+      )
+     }
     </>
   )
 }
