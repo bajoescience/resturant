@@ -28,7 +28,7 @@ import threeImg from './images/three.jpg'
 import fourImg from './images/four.jpg'
 
 // Home image contains {img, title}
-const homeImage = {img: homeImg, title: 'Home Image'}
+const homeImage = {img: homeImg, title: "Joe's resturant"}
 
 // This list must contain type which is either image or text
 // arranged the way it is meant to be displayed

@@ -12,7 +12,7 @@ const HomeScreen = ({homeImage}) => {
                 width={'100%'} 
                 alt={homeImage.title}
                  />
-            : <p>Home Image goes here</p>
+            : <p>Joe's Resturant</p>
           }
           <Box position={'absolute'} top={'50%'} left={'50%'} sx={{transform: 'translate(-50%, -50%)'}}>
             <Typography variant="h2">
